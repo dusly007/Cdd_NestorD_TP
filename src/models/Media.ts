@@ -1,3 +1,4 @@
+// Classe abstraite Media qui sert de base à Film et Serie
 export abstract class Media {
     constructor(
       public id: string,

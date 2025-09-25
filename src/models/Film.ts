@@ -1,3 +1,4 @@
+// Classe Film qui hérite de Media
 import { Media } from './Media';
 
 export class Film extends Media {
@@ -10,6 +11,6 @@ export class Film extends Media {
     public genre: string,
     public annee: number
   ) {
-    super(id, titre, plateforme, userId);
+    super(id, titre, plateforme, userId);// appel du constructeur parent Media
   }
 }
