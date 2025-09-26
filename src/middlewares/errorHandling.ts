@@ -5,7 +5,7 @@ export function errorHandler(err: any, req: Request, res: Response, next: NextFu
 
   //réponse 500 avec message d’erreur
   res.status(500).json({
-    error: "Une erreur est survenue sur le serveur.",
+    error: "erreur survenue sur le serveur.",
     message: err.message,
   });
 }
