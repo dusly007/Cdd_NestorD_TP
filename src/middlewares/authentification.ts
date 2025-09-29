@@ -7,7 +7,7 @@ export function authenticate(req: Request, res: Response, next: NextFunction) {
   if (!userHeader || typeof userHeader !== 'string') {
     return res.status(401).json({ error: 'Header user manquant' });
   }
-  // On coupe le header en deux morceaux : username et role
+  //header en deux morceaux : username et role
   const data = userHeader.split(':');
   if (data.length !== 2) {
     return res.status(400).json({ error: 'Format header invalide, mettre "username:role"' });

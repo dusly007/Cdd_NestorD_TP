@@ -5,6 +5,7 @@ export class MediaController {
   // Récupère films séries
   public static async getAllMedia(req: Request, res: Response): Promise<void> {
     try {
+      //Erreur car j'ai pas pu faire logger mediaservice
       const media = await MediaService.getAllMedia();
       res.status(200).json(media);
     } catch (error) {
@@ -12,7 +13,7 @@ export class MediaController {
     }
   }
 
-  // Récupère un média par son ID
+  // Récupère média par ID
   public static async getMediaById(req: Request, res: Response): Promise<void> {
     const { id } = req.params;
     try {
@@ -27,7 +28,7 @@ export class MediaController {
     }
   }
 
-  // Ajouter un nouveau média (film ou série)
+  // Ajouter nouveau média (film série)
   public static async createMedia(req: Request, res: Response): Promise<void> {
     const mediaData = req.body;
     try {
@@ -38,7 +39,7 @@ export class MediaController {
     }
   }
 
-  // Modifier un média existant (film ou série)
+  // Modifier média existant (film série)
   public static async updateMedia(req: Request, res: Response): Promise<void> {
     const { id } = req.params;
     const mediaData = req.body;
@@ -69,7 +70,7 @@ export class MediaController {
     }
   }
 
-  // Récupère les épisodes d'une série spécifique
+  // Récupère épisodes d'une série spécifique
   public static async getSeriesEpisodes(req: Request, res: Response): Promise<void> {
     const { id } = req.params;
     try {

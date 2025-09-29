@@ -1,9 +1,9 @@
 import { Router } from 'express';
-//import { LogController } from '../controllers/log.controller';
+import { LogController } from '../controllers/logController';
 
 const router = Router();
 
 // Obtenir les derniers logs
-router.get('/logs', logController.getLogs);
+router.get('/logs', LogController.getLogs);
 
 export { router };
