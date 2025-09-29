@@ -1,0 +1,99 @@
+{
+    "info": {
+      "name": "TP1 API Médias",
+      "_postman_id": "1",
+      "description": "Test API films et séries"  
+    },
+    "item": [
+      {
+        "name": "Lister tous les médias",
+        "request": {
+          "method": "GET",
+          "url": {
+            "raw": "http://localhost:3000/api/medias",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["api", "medias"]
+          }
+        }
+      },
+      {
+        "name": "Obtenir un média par id",
+        "request": {
+          "method": "GET",
+          "url": {
+            "raw": "http://localhost:3000/api/medias/1",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["api", "medias", "1"]
+          }
+        }
+      },
+      {
+        "name": "Ajouter un média (POST)",
+        "request": {
+          "method": "POST",
+          "header": [
+            {"key": "Content-Type", "value": "application/json"},
+            {"key": "user", "value": "JohnDoe:admin"}
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\"titre\":\"Mon film\",\"plateforme\":\"Netflix\",\"duree\":100,\"genre\":\"Action\",\"annee\":2023}"
+          },
+          "url": {
+            "raw": "http://localhost:3000/api/medias",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["api", "medias"]
+          }
+        }
+      },
+      {
+        "name": "Modifier média (PUT)",
+        "request": {
+          "method": "PUT",
+          "header": [
+            {"key": "Content-Type", "value": "application/json"},
+            {"key": "user", "value": "JohnDoe:admin"}
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\"titre\":\"Film modifié\"}"
+          },
+          "url": {
+            "raw": "http://localhost:3000/api/medias/1",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["api", "medias", "1"]
+          }
+        }
+      },
+      {
+        "name": "Supprimer média (DELETE)",
+        "request": {
+          "method": "DELETE",
+          "header": [{"key": "user", "value": "JohnDoe:admin"}],
+          "url": {
+            "raw": "http://localhost:3000/api/medias/1",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["api", "medias", "1"]
+          }
+        }
+      },
+      {
+        "name": "Voir épisodes d'une série",
+        "request": {
+          "method": "GET",
+          "url": {
+            "raw": "http://localhost:3000/api/series/2/episodes",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["api", "series", "2", "episodes"]
+          }
+        }
+      }
+    ]
+  }
+  
