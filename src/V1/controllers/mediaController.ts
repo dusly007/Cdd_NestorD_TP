@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-//import { MediaService } from '../services/media.service';
+import { MediaService } from '../services/mediaService';
 
 export class MediaController {
   // Récupère films séries

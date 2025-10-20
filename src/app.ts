@@ -2,7 +2,7 @@ import express from "express";
 //import mediaRoutes from "./routes/mediaRoutes";
 //import logRoutes from "./routes/logRoutes";
 //import serieRoutes from "./routes/serieRoutes";
-import userRoutes from "./routes/userRoutes";
+import userRoutes from "./V1/routes/userRoutes";
 
 const app = express();
 app.use(express.json());
