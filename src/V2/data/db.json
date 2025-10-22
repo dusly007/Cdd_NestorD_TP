@@ -1,0 +1,28 @@
+{
+    "medias": [
+      {
+        "id": 1,
+        "titre": "Inception",
+        "plateforme": "Netflix",
+        "userId": 1,
+        "type": "film",
+        "durée": 148
+      },
+      {
+        "id": 2,
+        "titre": "Breaking Bad",
+        "plateforme": "Hulu",
+        "userId": 1,
+        "type": "serie",
+        "statut": "en_cours"
+      }
+    ],
+    "users": [
+      {
+        "id": 1,
+        "nom": "John Doe",
+        "role": "user"
+      }
+    ]
+  }
+  
