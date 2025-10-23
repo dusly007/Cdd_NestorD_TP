@@ -1,9 +1,12 @@
-import { Router } from 'express';
-import { SerieController } from '../controllers/seriesController';
+import express from "express";
+import { createSeries, getSeries } from "../controllers/seriesController";
 
-const router = Router();
+const router = express.Router();
 
-// Route pour obtenir les épisodes d’une série spécifique
-router.get('/series/:id/episodes', SerieController.getEpisodesBySerieId);
+// Ajouter une série
+router.post("/", createSeries);
+
+// Récupérer les séries avec filtres
+router.get("/", getSeries);
 
 export default router;

@@ -1,16 +1,17 @@
-// Classe Film qui hérite de Media
-import { Media } from './Media';
+import mongoose, { Schema, Document } from "mongoose";
 
-export class Film extends Media {
-  constructor(
-    id: string,
-    titre: string,
-    plateforme: string,
-    userId: string,
-    public duree: number,
-    public genre: string,
-    public annee: number
-  ) {
-    super(id, titre, plateforme, userId);// appel du constructeur parent Media
-  }
+interface IMovie extends Document {
+  title: string;
+  genres: string[];
+  releaseDate?: Date;
+  durationMin: number;
 }
+
+const MovieSchema: Schema = new Schema({
+  title: { type: String, required: true },
+  genres: { type: [String], required: true },
+  releaseDate: { type: Date },
+  durationMin: { type: Number, required: true }
+});
+
+export default mongoose.model<IMovie>("Movie", MovieSchema);

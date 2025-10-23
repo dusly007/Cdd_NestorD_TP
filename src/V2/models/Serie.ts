@@ -1,15 +1,15 @@
-import { Media } from './Media';
-import { Saison } from './Saison';
+import mongoose, { Schema, Document } from "mongoose";
 
-export class Serie extends Media {
-  constructor(
-    id: string,
-    titre: string,
-    plateforme: string,
-    userId: string,
-    public statut: 'en_attente' | 'en_cours' | 'terminee',
-    public saisons: Saison[] = []
-  ) {
-    super(id, titre, plateforme, userId);
-  }
+interface ISeries extends Document {
+  title: string;
+  genres: string[];
+  status: "ongoing" | "ended";
 }
+
+const SeriesSchema: Schema = new Schema({
+  title: { type: String, required: true },
+  genres: { type: [String], required: true },
+  status: { type: String, enum: ["ongoing", "ended"], required: true },
+});
+
+export default mongoose.model<ISeries>("Series", SeriesSchema);

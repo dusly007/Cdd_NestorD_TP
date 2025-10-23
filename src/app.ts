@@ -1,13 +1,28 @@
 import express from "express";
-//import mediaRoutes from "./routes/mediaRoutes";
-//import logRoutes from "./routes/logRoutes";
-//import serieRoutes from "./routes/serieRoutes";
-import userRoutes from "./V1/routes/userRoutes";
+import mongoose from "mongoose";
+import dotenv from "dotenv";
+//import cors from "cors";
+import bodyParser from "body-parser";
 
-const app = express();
-app.use(express.json());
+// Importation des routes
 
-//app.use("/api/medias", mediaRoutes);
-//app.use("/api/logs", logRoutes);
-//app.use("/api/series", serieRoutes);
-app.use("/api/users", userRoutes);
+
+// Importation des middlewares
+
+
+// Chargement des variables d'environnement
+dotenv.config();
+
+// Connexion à MongoDB
+
+// Création de l'application Express
+
+
+// Middleware CORS
+
+// Routes
+
+// Configuration Swagger
+
+
+// Démarrage du serveur

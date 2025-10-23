@@ -1,19 +1,29 @@
-import { Request, Response } from 'express';
-import { MediaService } from '../services/mediaService';
+import { Request, Response } from "express";
+import Series from "../models/Serie";
 
-export class SerieController {
-  // Retourne tous les épisodes d’une série (toutes les saisons)
-  public static async getEpisodesBySerieId(req: Request, res: Response) {
-    const { id } = req.params;
-    try {
-      const episodes = await MediaService.getSeriesEpisodes(id);
-      if (!episodes || episodes.length === 0) {
-        res.status(404).json({ message: 'Aucun épisode trouvé pour cette série.' });
-      } else {
-        res.status(200).json(episodes);
-      }
-    } catch (error) {
-      res.status(500).json({ message: 'Erreur lors de la récupération des épisodes.' });
-    }
+// Créer une série
+export const createSeries = async (req: Request, res: Response) => {
+  try {
+    const { title, genres, status } = req.body;
+    const series = new Series({ title, genres, status });
+    await series.save();
+    res.status(201).json({ message: "Series created", series });
+  } catch (err) {
+    res.status(400).json({ message: "Error creating series" });
   }
-}
+};
+
+// Récupérer toutes les séries
+export const getSeries = async (req: Request, res: Response) => {
+  const { title, genre, status } = req.query;
+  try {
+    const series = await Series.find({
+      title: { $regex: title || "", $options: "i" },
+      genres: { $in: [genre] },
+      status: status || { $exists: true },
+    });
+    res.status(200).json(series);
+  } catch (err) {
+    res.status(500).json({ message: "Error retrieving series" });
+  }
+};
