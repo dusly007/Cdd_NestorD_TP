@@ -1,12 +1,12 @@
 import express from "express";
 import { createSeries, getSeries } from "../controllers/seriesController";
 
-const router = express.Router();
+const  seriesRoutes = express.Router();
 
 // Ajouter une série
-router.post("/", createSeries);
+seriesRoutes.post("/", createSeries);
 
 // Récupérer les séries avec filtres
-router.get("/", getSeries);
+seriesRoutes.get("/", getSeries);
 
-export default router;
+export default  seriesRoutes;

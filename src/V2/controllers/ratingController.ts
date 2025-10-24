@@ -1,5 +1,7 @@
 import { Request, Response } from "express";
 import Rating from "../models/rating";
+import mongoose from "mongoose";
+
 
 // Ajouter une note
 export const addRating = async (req: Request, res: Response) => {
