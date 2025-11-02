@@ -1,5 +1,9 @@
 import Series from '../models/Serie';
+<<<<<<< HEAD
 import Season from '../models/Season';
+=======
+import Season from '../models/Saison';
+>>>>>>> adfbe6ac4033e3e1f156bcd0ac94c14a8eb4d09b
 import Episode from '../models/Episode';
 
 // Créer une série

@@ -1,12 +1,12 @@
 import express from "express";
 import { addRating, getMovieRating } from "../controllers/ratingController";
 
-const router = express.Router();
+const ratingRoutes = express.Router();
 
 // Ajouter une note
-router.post("/", addRating);
+ratingRoutes.post("/", addRating);
 
 // Récupérer la moyenne des notes d'un film
-router.get("/avg/movie/:movieId", getMovieRating);
+ratingRoutes.get("/avg/movie/:movieId", getMovieRating);
 
-export default router;
+export default ratingRoutes;
